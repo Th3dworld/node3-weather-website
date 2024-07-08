@@ -14,8 +14,10 @@ const forecast = (longitude, latitude, callback) => {
             const desc = body.current.weather_descriptions[0];
             const temp = body.current.temperature;
             const tempFeelslike = body.current.feelslike;
+            const windSpeed = body.current.wind_speed;
 
-            callback(undefined, `It is ${desc} in ${place} with a temperature of ${temp}.`);
+            callback(undefined, `It is ${desc} in ${place} with a temperature of ${temp}, and it feels like ${tempFeelslike}.
+            with a wind speed of ${windSpeed}`);
         }
     })
 }
